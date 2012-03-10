@@ -2,13 +2,75 @@
 <html>
 <head>
   <title>TestDriven | <%= yield(:title) %></title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <!-- Smag: improves HTML5 support on elderly IE's-->
+  <!--[if lt IE 9]> <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script><![endif]-->
+  <%= stylesheet_link_tag "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  <!-- Smag: improves device support on mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-    WELCOME TO TESTDRIVEN
-    <%= yield %>
+	<div class="navbar navbar-fixed-top">
+	  <div class="navbar-inner">
+	    <div class="container">
+			
+	      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+	      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </a>
 
+	      <!-- Be sure to leave the brand out there if you want it shown -->
+	      <a class="brand" href="/static_pages/home"><span style="font-weight:700; color:red;">LORAX</span></a>
+
+	      <!-- Everything you want hidden at 940px or less, place within here -->
+	      <div class="nav-collapse">
+	        <!-- .nav, .navbar-search, .navbar-form, etc -->
+		        <ul class="nav">
+				  <li class="active"><a href="/static_pages/home">Home</a></li>
+				  <li class="divider-vertical"></li>
+				  <li><a href="/static_pages/about">About</a></li>
+				  <li class="divider-vertical"></li>
+				  <li><a href="/static_pages/contact">Contact</a></li>
+				  <li class="divider-vertical"></li>
+				  <li><a href="/static_pages/help">Help</a></li>
+				</ul>
+	      </div>
+
+	    </div>
+	  </div>
+	</div>
+    <div class="container">
+		<div id="toprow" class="row">
+			<div class="span9"><%= yield %></div>
+			<div class="span3"><h3>What's going on here?</h3>
+				<!-- start slipsum code -->
+
+				<h4>I took lessons</h4>
+				<p>Well, the way they make shows is, they make one show. That show's called a pilot. Then they show that show to the people who make shows, and on the strength of that one show they decide if they're going to make more shows. Some pilots get picked and become television programs. Some don't, become nothing. She starred in one of the ones that became nothing. </p>
+
+				<h4>So, you cold?</h4>
+				<p>You see? It's curious. Ted did figure it out - time travel. And when we get back, we gonna tell everyone. How it's possible, how it's done, what the dangers are. But then why fifty years in the future when the spacecraft encounters a black hole does the computer call it an 'unknown entry event'? Why don't they know? If they don't know, that means we never told anyone. And if we never told anyone it means we never made it back. Hence we die down here. Just as a matter of deductive logic. </p>
+
+				<h4>Oh... what I'm gonna do?</h4>
+				<p>Yeah, I like animals better than people sometimes... Especially dogs. Dogs are the best. Every time you come home, they act like they haven't seen you in a year. And the good thing about dogs... is they got different dogs for different people. Like pit bulls. The dog of dogs. Pit bull can be the right man's best friend... or the wrong man's worst enemy. You going to give me a dog for a pet, give me a pit bull. Give me... Raoul. Right, Omar? Give me Raoul. </p>
+
+				<!-- please do not remove this line -->
+
+				<div style="display:none;">
+				<a href="http://slipsum.com">lorem ipsum</a></div>
+
+				<!-- end slipsum code -->
+
+
+				<p class="smag">Made with Ruby on Rails, Bootstrap, and a slew of tutorials by smag</p>
+			</div>
+		
+		</div>
+		
+	</div>
+	
 </body>
 </html>
