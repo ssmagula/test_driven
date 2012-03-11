@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>TestDriven | <%= yield(:title) %></title>
+  <title><%= full_title(yield(:title)) %></title>
   <!-- Smag: improves HTML5 support on elderly IE's-->
   <!--[if lt IE 9]> <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script><![endif]-->
   <%= stylesheet_link_tag "application", :media => "all" %>

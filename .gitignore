@@ -13,3 +13,11 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+
+# Smag: other unneeded files that are local only
+doc/
+*.swp
+*~
+.project
+.DS_Store
+bundler_stubs/
