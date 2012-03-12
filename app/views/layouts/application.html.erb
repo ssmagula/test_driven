@@ -2,51 +2,27 @@
 <html>
 <head>
   <title><%= full_title(yield(:title)) %></title>
-  <!-- Smag: improves HTML5 support on elderly IE's-->
-  <!--[if lt IE 9]> <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script><![endif]-->
-  <%= stylesheet_link_tag "application", :media => "all" %>
+  <!-- Smag: this include for HTML5 support on elderly IE's-->
+  <%= render 'layouts/shim' %>
+  <%= stylesheet_link_tag "application", media: "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
   <!-- Smag: improves device support on mobile-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-	<div class="navbar navbar-fixed-top">
-	  <div class="navbar-inner">
-	    <div class="container">
-			
-	      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
-	      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-	        <span class="icon-bar"></span>
-	        <span class="icon-bar"></span>
-	        <span class="icon-bar"></span>
-	      </a>
-
-	      <!-- Be sure to leave the brand out there if you want it shown -->
-	      <a class="brand" href="/static_pages/home"><span style="font-weight:700; color:red;">LORAX</span></a>
-
-	      <!-- Everything you want hidden at 940px or less, place within here -->
-	      <div class="nav-collapse">
-	        <!-- .nav, .navbar-search, .navbar-form, etc -->
-		        <ul class="nav">
-				  <li class="active"><a href="/static_pages/home">Home</a></li>
-				  <li class="divider-vertical"></li>
-				  <li><a href="/static_pages/about">About</a></li>
-				  <li class="divider-vertical"></li>
-				  <li><a href="/static_pages/contact">Contact</a></li>
-				  <li class="divider-vertical"></li>
-				  <li><a href="/static_pages/help">Help</a></li>
-				</ul>
-	      </div>
-
-	    </div>
-	  </div>
-	</div>
+    <%= render 'layouts/header' %>
     <div class="container">
 		<div id="toprow" class="row">
-			<div class="span9"><%= yield %></div>
+			<div class="span9">
+				<div class="center hero-unit">
+					<h4>Never miss another LORAX, become a member today &nbsp;&nbsp;<%= link_to "Join LORAX", signup_path, class: "btn btn-large btn-primary" %></h4>
+			    </div>
+				<%= yield %>
+				<%= render 'layouts/footer' %>
+			</div>
 			<div class="span3"><h3>What's going on here?</h3>
-				<!-- start slipsum code -->
+				<!-- start right column blurbs -->
 
 				<h4>I took lessons</h4>
 				<p>Back in 2005 or 2006 I discovered <cite>Why's Poignant Guide to Ruby</cite>. It is probably the most artful and accessible introduction to programming I've seen.
@@ -56,28 +32,19 @@
 					of stuff. Homebrew, RVM, Ruby, Rails, Git, Heroku, Mysql, you name it. Eventually I got things running. And with the help of stackoverflow.com and about 12 
 					tutorials I managed to get this site up.</p>
 
-				<h4>So, what's the plan?</h4>
-				<p>I'm going to create some sort of application here. Been thinking about it a bit. I have a few ideas: tools for people who design software? What about
-					tools for people who design software? Or maybe a way to find and use creative commons images, sort of like a stock image site for public domain images?
+				<h4>What's the plan?</h4>
+				<p>I'm going to create some sort of application here. Been thinking about it a bit. I have a few ideas. What about some
+					tools for people who design software? Or a way to find and use creative commons images, sort of like a stock image site for public domain images?
 					Or something that I could use at work? We'll see.</p>
 					<p>First, I'll need to go through a lot more learning. I need to learn more about Git and Heroku. How to create a custom subdomain, for example, without 
 					breaking my Git connection to Heroku. I need to understand how to create branches in Git, and how to collaborate with a team of people. 
-					Does each have a branch, and then you merge? I need to learn about testing, automated and manual. I tried out Rspec, which is pretty cool stuff. I like it.
-					But mainly, I need to learn Ruby and Rails. I'd like to go to some training. I need to come up with some good and feasible ideas for something to make. Exciting stuff. </p>
+					I need to learn about testing, automated and manual. I tried out Guard with Rspec, and I have it sort of working. But mainly, I need to learn 
+					Rails and Ruby. I'd like to go to some training. </p>
 
 				<h4>Oh... what I'm gonna do?</h4>
-				<p>Well, this is the shell. It is just a group of static pages now, with pictures here and there. Next up is use the Rails scaffolding to generate
-					some ways to create, view, update, delete items. Then maybe I'll experiment with how to upload and manipulate images on the fly. We'll need to be 
-					able to create accounts at some point, and login and logout. What else? Maybe we'll need some streaming fonts to make this place a home, and not
-					just little box on the hillside with straight-up Bootstrap </p>
-
-				<!-- please do not remove this line -->
-
-				<div style="display:none;">
-				<a href="http://slipsum.com">lorem ipsum</a></div>
-
-				<!-- end slipsum code -->
-
+				<p>Well, this is just a shell where you see a few static pages and some buttons, I see a new application being born. When it grows up, you'll be able to login
+					logout, get updates via email, comment, publish, and do things. I need to learn how to upload, store, and manipulate images on the fly. Some streaming 
+					fonts to make this place a home? </p>
 
 				<p class="smag">Made by <a href="http://www.smagula.org">smag</a> with Ruby on Rails, Bootstrap, and a slew of tutorials</p>
 			</div>
@@ -85,6 +52,5 @@
 		</div>
 		
 	</div>
-	
 </body>
 </html>
