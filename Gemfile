@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.1'
+# Smag: state of the art password encryption
+gem 'bcrypt-ruby', '3.0.1'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -10,6 +12,8 @@ group :development do
   gem 'rspec-rails', '2.8.1'
   # Smag: Guard is automated testing 
   gem 'guard-rspec', '0.5.5'
+  # Annotate allows me to add notes to models
+  gem 'annotate', '~> 2.4.1.beta'
   
 end
 
