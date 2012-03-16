@@ -13,13 +13,15 @@
 <body>
     <%= render 'layouts/header' %>
     <div class="container">
+	    <% flash.each do |key, value| %>
+		    <div class="alert alert-<%= key %>"><%= value %></div>
+		<% end %>
 		<div id="toprow" class="row">
 			<div class="span9">
-				<div class="center hero-unit">
-					<h4>Never miss another LORAX, become a member today &nbsp;&nbsp;<%= link_to "Join LORAX", signup_path, class: "btn btn-large btn-primary" %></h4>
-			    </div>
 				<%= yield %>
 				<%= render 'layouts/footer' %>
+				<!-- Smag: this debugger will print out useful info-->
+				<%= debug(params) if Rails.env.development? %>
 			</div>
 			<div class="span3"><h3>What's going on here?</h3>
 				<!-- start right column blurbs -->

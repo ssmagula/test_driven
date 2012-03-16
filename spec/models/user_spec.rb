@@ -63,6 +63,7 @@ require 'spec_helper'
           it { should_not == user_for_invalid_password }
           specify { user_for_invalid_password.should be_false }
         end
+        
       end
       
       describe "with a password that's too short" do

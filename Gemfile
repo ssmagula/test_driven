@@ -42,6 +42,7 @@ group :test do
   # Speeds testing up
   gem 'guard-spork', '0.3.2'
   gem 'spork', '0.9.0'
+  gem 'factory_girl_rails', '1.4.0'
   
   # Mac OS X-specific gems; RailsTutorial.com asked for rb-fsevent 0.4.3.1, which had error on install
   gem 'rb-fsevent', :require => false

@@ -96,5 +96,48 @@ footer small {
   float: left;
 }
 
+/* DEBUGGING BOX */
 
+.box_sizing {
+  -moz-box-sizing: border-box; 
+  -webkit-box-sizing: border-box; 
+   box-sizing: border-box;
+}
 
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45px;
+  .box_sizing;
+}
+
+/* USER PROFILE */
+
+.gravatar {
+  float: left;
+  margin-right: 10px;
+}
+
+/* FORMS */
+
+#error_explanation {
+  color:#f00;
+  ul {
+    list-style: none;
+    margin: 0 0 1em 0;
+  }
+}
+
+.field_with_errors {
+  color: red;
+ }
+
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  padding: 10px;
+  height: auto;
+  margin-bottom: 15px;
+  .box_sizing;
+}
