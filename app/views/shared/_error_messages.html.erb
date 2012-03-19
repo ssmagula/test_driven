@@ -2,8 +2,8 @@
 	<div id="error_explanation">
 		<div class="alert alert-error">
 			<a class="close" data-dismiss="alert">×</a>
-			<p><h4 class="alert-heading">Sorry about this...</h4>
-				It appears there are <%= pluralize(@user.errors.count, "error") %></p>
+			<p><h4 class="alert-heading">Something got messed up here...</h4>
+				Don't sweat it. Probably my fault anyway. You have <%= pluralize(@user.errors.count, "error") %></p>
 		</div>
 			<ul>
 				<% @user.errors.full_messages.each do |msg| %>

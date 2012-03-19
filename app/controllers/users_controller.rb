@@ -8,11 +8,12 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
   
-  # Smag: this seems to be working...save for the notice
+  # Smag: this handles the creation of users, and what happens after submitting registration form
   def create
     @user = User.new(params[:user])
     if @user.save
-      flash[:success] = "Welcome friend. You are officially a member of LORAX!"
+      sign_in @user
+      flash[:success] = "Welcome, friend. You're officially a member of LORAX!"
       redirect_to @user
     else
       render 'new'

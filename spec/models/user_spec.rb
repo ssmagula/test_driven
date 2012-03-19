@@ -24,9 +24,16 @@ require 'spec_helper'
       it { should respond_to(:password_digest) }
       it { should respond_to(:password) }
       it { should respond_to(:password_confirmation) }
+      it { should respond_to(:remember_token) }
       it { should respond_to(:authenticate) }
 
       it { should be_valid }
+
+# Smag: this checks that the token for the logged in cookie is present post save      
+      describe "remember token" do
+        before { @user.save }
+        its(:remember_token) { should_not be_blank }
+      end
 
       describe "when name is not present" do
         before { @user.name = " " }

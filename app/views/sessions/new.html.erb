@@ -1,0 +1,21 @@
+<% provide(:title, 'Log in to LORAX') %>
+
+
+<div class="row">
+	<div class="span6 offset3">
+		<h1>Sign in</h1>
+        <p>&nbsp;</p>
+		<div class="control-group">
+			<%= form_for(:session, :url => sessions_path ) do |f| %>
+			  <%= f.label :email, "Email" %>
+			  <%= f.text_field :email %>
+			  
+			  <%= f.label :password, "Password" %>
+			  <%= f.password_field :password %>
+			  
+			  <%= f.submit "Sign in", :class => "btn btn-large btn-primary", :disable_with => 'Logging in...' %>
+			<% end %>
+			<p>New to Lorax? <%= link_to "Sign up now", signup_path %></p>
+		</div>
+	</div>
+</div>
